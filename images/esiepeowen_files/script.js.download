@@ -1,3 +1,9 @@
+let menu = document.querySelector('#menu-bars');
+let header = document.querySelector('header');
+menu.onclick = () => {
+    menu.classList.toggle('fa-times');
+    header.classList.toggle('active');
+}
 $(document).ready(function () {
     $(window).scroll(function () {
         if (this.scrollY > 20) {
@@ -16,20 +22,19 @@ $(document).ready(function () {
     })
 
     //toggle menu/navbar script 
-    $(document).ready(function() {
-        $('#icon').click(function(){
-          $('ul').toggleClass('show')
-        });
+    $('.menu-btn').click(function () {
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
     });
     //typing animation script
     var typed = new Typed(".typing", {
-        strings: ["Web Designer", "Web Developer", "Freelancer", "Mentor"],
+        strings: ["Computer Scientist", "Web Developer", "Freelancer", "Software Engineer", "Mentor"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
     var typed = new Typed(".typing-2", {
-        strings: ["Web Designer", "Web Developer", "Freelancer", "Mentor"],
+        strings: ["Computer Scientist", "Web Developer", "Freelancer", "Software Engineer", "Mentor"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true

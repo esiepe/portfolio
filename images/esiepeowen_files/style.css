@@ -13,12 +13,16 @@ html {
     padding: 0 80px;
     margin: auto;
 }
-nav #icon {
-    color: white;
-    font-size: 30px;
-    line-height: 80px;
-    float: right;
-    margin-right: 40px;
+#menu-bars {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000;
+    background: purple;
+    color: #fff;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 3rem;
     cursor: pointer;
     display: none;
 }
@@ -102,12 +106,18 @@ nav #icon {
 
 .home {
     display: flex;
-    background: url(images/pexels-felicia-evelyn-limena-1568639.jpg) no-repeat;
-    background-size: cover;
     height: 100vh;
     color: #fff;
     min-height: 500px;
     font-family: 'Ubuntu', sans-serif;
+}
+.back-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
 }
 .home .max-width {
     margin: auto 0 auto 40px;
@@ -291,24 +301,19 @@ section .title::after {
 .services .serv-content .card:hover .box{
     transform: scale(1.05);
 }
-.education .card i,
 .services .serv-content .card i{
     font-size: 50px;
     color: purple;
     transition: color 0.3s ease;
 }
 .services .serv-content .card:hover i{
+
     color: #fff;
 }
 .services .serv-content .card .text {
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
-}
-.education .card .box .text {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .skills .title::after{
@@ -497,17 +502,6 @@ footer .follow a {
 footer .follow a:hover {
     color: #fff;
 }
-.education .card{
-    padding: 1rem;
-    box-shadow: #333;
-    padding: 15px;
-    padding-top: 45px;
-    border-radius: 5px;
-    z-index: 1;
-    border-top: .5rem solid purple;
-    border-left: .5rem solid purple;
-    margin-bottom: 1rem;
-}
 
 
 
@@ -543,29 +537,26 @@ footer .follow a:hover {
     .max-width{
         padding: 0 50px;
     }
-    nav #icon {
-        display: block;
+    #menu-bars {
+        display: initial;
     }
-    nav ul {
+    .navbar .menu {
         position: fixed;
-        width: 100%;
         height: 100vh;
-        background: #333;
-        top: 80px;
-        left: -100;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a {
-        font-size: 20px;
-    }
-    nav ul.show {
+        width: 100%;
         left: 0;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
     }
 }
 @media (max-width: 947px){
